@@ -1,0 +1,59 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+
+<main class="content" role="main">
+
+    <article class="{{post_class}}">
+
+        <header class="post-header">
+            <h1 class="post-title">{{title}}</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
+            </section>
+        </header>
+
+        <section class="post-content">
+            {{content}}
+        </section>
+
+        <footer class="post-footer">
+
+        {{! Everything inside the #author tags pulls data from the author }}
+        {{#author}}
+
+            {{#if image}}
+            <figure class="author-image">
+                <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+            </figure>
+            {{/if}}
+
+            <section class="author">
+                <p>posted by <a href="{{url}}">{{name}}</a></p>
+
+                {{#if bio}}
+                    <p>{{bio}}</p>
+                {{/if}}
+                <div class="author-meta">
+                    {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
+                    {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
+                </div>
+            </section>
+
+        {{/author}}
+
+            <section class="share">
+        <p><a class="icon-feed" href="{{@blog.url}}/rss/"> Subscribe</a></p>
+            </section>
+
+        </footer>
+
+    </article>
+
+</main>
+
+{{/post}}
