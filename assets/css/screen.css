@@ -470,10 +470,23 @@ margin on the iframe, cause it breaks stuff. */
 body, html {
   background-color: #fafafa;
 }
+
+.link-plain {
+  color: inherit;
+  text-decoration: inherit;
+}
+.link-plain:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 .goodrobot-bar {
+  color: #fff;
+  font-weight: bold;
+  text-shadow: #000 1px 1px 2px;
   box-sizing: border-box;
   width: 100%;
-  padding: 0 0 0 30px;
+  padding: 3px 0 0 30px;
   height: 40px;
   background-image: linear-gradient(
     to bottom,
