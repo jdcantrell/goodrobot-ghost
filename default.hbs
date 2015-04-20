@@ -24,14 +24,16 @@
 <body class="{{body_class}}">
 
     <div class="goodrobot-bar">
-      <a class="link-plain" href="/">Functional UX &ndash; Metric-driven user frustration.</a>
+      <img src="http://goodrobot.net/images/goodrobot.png" alt='goodrobot'>
     </div>
 
     {{! Everything else gets inserted here }}
     {{{body}}}
 
     <footer class="site-footer clearfix">
-         <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+         <a href="/">home</a>
+         <a href="/log">log</a>
+         <a href="/stream">links</a>
     </footer>
 
     {{! Ghost outputs important scripts and data with this tag }}
